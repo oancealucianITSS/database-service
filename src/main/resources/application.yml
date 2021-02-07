@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: database-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/chestiiFaine
+    username: root
+    password: parola112
+
+  liquibase:
+    enabled: false
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    register-with-eureka: true
+    feth-registry: true
+    should-unregister-on-shutdown: true
+
+server:
+  port: 8081
+
+
+
+

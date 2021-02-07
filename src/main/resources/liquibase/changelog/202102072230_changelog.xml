@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet  id="202102072230"  author="lucian.oancea" >
+        <insert tableName="product_category">
+            <column name="category_name" value="#Casa si gradina"/>
+        </insert>
+
+        <insert tableName="product_category">
+            <column name="category_name" value="#Animale de companie"/>
+        </insert>
+
+        <insert tableName="product_category">
+            <column name="category_name" value="#Gadgeturi"/>
+        </insert>
+
+        <insert tableName="product_category">
+            <column name="category_name" value="#Sport"/>
+        </insert>
+
+        <insert tableName="product_category">
+            <column name="category_name" value="#Alte chestii faine"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
