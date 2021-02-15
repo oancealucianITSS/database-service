@@ -36,7 +36,7 @@ public class Product {
     private Double unitPrice;
 
     @Column(name = "image_url")
-    private String image_url;
+    private String imageUrl;
 
     @Column(name = "active")
     private Boolean active;
