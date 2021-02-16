@@ -5,7 +5,7 @@
 
     <changeSet id="202102072100#1" author="lucian.oancea">
         <createTable tableName="product_category">
-            <column name="category_id" type="integer" autoIncrement="true">
+            <column name="id" type="integer" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="user_primary_key"/>
             </column>
             <column name="category_name" type="varchar(255)" defaultValueComputed="null" >
@@ -20,7 +20,7 @@
 
     <changeSet id="202102072100#2" author="lucian.oancea">
         <createTable tableName="product">
-            <column name="product_id" type="integer" autoIncrement="true">
+            <column name="id" type="integer" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="user_primary_key"/>
             </column>
             <column name="sku" type="varchar(255)" defaultValueComputed="null" >
@@ -56,7 +56,7 @@
                 <constraints nullable="true"/>
             </column>
             <column name="category_id" type="integer">
-                <constraints foreignKeyName="FK_pc_references_category" referencedColumnNames="category_id" referencedTableName="product_category" nullable="false"/>
+                <constraints foreignKeyName="FK_pc_references_category" referencedColumnNames="id" referencedTableName="product_category" nullable="false"/>
             </column>
         </createTable>
 

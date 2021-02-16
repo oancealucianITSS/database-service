@@ -1,10 +1,14 @@
 package com.example.repository;
 
 import com.example.entity.Product;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @CrossOrigin
 public interface ProductRepository extends JpaRepository<Product, Integer> {
+    Page<Product> findByCategoryId(@RequestParam("id") Integer id, Pageable pageable );
 
 }

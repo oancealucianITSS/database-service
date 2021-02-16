@@ -6,23 +6,23 @@
 
     <changeSet  id="202102072230"  author="lucian.oancea" >
         <insert tableName="product_category">
-            <column name="category_name" value="#Casa si gradina"/>
+            <column name="category_name" value="Casa si gradina"/>
         </insert>
 
         <insert tableName="product_category">
-            <column name="category_name" value="#Animale de companie"/>
+            <column name="category_name" value="Animale de companie"/>
         </insert>
 
         <insert tableName="product_category">
-            <column name="category_name" value="#Gadgeturi"/>
+            <column name="category_name" value="Gadgeturi"/>
         </insert>
 
         <insert tableName="product_category">
-            <column name="category_name" value="#Sport"/>
+            <column name="category_name" value="Sport"/>
         </insert>
 
         <insert tableName="product_category">
-            <column name="category_name" value="#Alte chestii faine"/>
+            <column name="category_name" value="Alte chestii faine"/>
         </insert>
 
     </changeSet>

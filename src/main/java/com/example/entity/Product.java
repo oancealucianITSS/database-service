@@ -14,10 +14,10 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_id",
+    @Column(name = "id",
             unique = true,
             nullable = false)
-    private Integer alertId;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)

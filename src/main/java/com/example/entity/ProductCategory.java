@@ -11,10 +11,10 @@ import java.util.Set;
 public class ProductCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id",
+    @Column(name = "id",
             unique = true,
             nullable = false)
-    private Integer categoryId;
+    private Integer id;
 
     @Column(name = "category_name")
     private String category_name;

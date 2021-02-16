@@ -10,7 +10,7 @@
             <column name="name" value="Dozator automat de săpun senzor infraroșu fără atingere"/>
             <column name="description" value="Poate fi alimentat cu orice tip de sapun lichid sau orice fel de lotiuni lichide fara granule."/>
             <column name="unit_price" valueNumeric="65"/>
-            <column name="image_url" value="assets/images/products/placeholder.png"/>
+            <column name="image_url" value="assets/images/products/casasigradina/cg1.png"/>
             <column name="active" valueBoolean="true"/>
             <column name="units_in_stock" valueNumeric="100"/>
             <column name="date_created" valueDate="now()"/>
@@ -22,7 +22,7 @@
             <column name="name" value="Suport periute si pasta pentru dinti"/>
             <column name="description" value="Nu necesita baterii."/>
             <column name="unit_price" valueNumeric="20"/>
-            <column name="image_url" value="assets/images/products/placeholder.png"/>
+            <column name="image_url" value="assets/images/products/casasigradina/cg2.png"/>
             <column name="active" valueBoolean="true"/>
             <column name="units_in_stock" valueNumeric="100"/>
             <column name="date_created" valueDate="now()"/>
@@ -35,7 +35,7 @@
             <column name="description"
                     value="Fiecare piesa are pe spate un dublu adeziv care se va lipi cu usurinta de perete"/>
             <column name="unit_price" valueNumeric="55"/>
-            <column name="image_url" value="assets/images/products/placeholder.png"/>
+            <column name="image_url" value="assets/images/products/casasigradina/cg3.png"/>
             <column name="active" valueBoolean="true"/>
             <column name="units_in_stock" valueNumeric="100"/>
             <column name="date_created" valueDate="now()"/>
@@ -48,7 +48,7 @@
             <column name="description"
                     value="Poate fi fixat pe capota acvariului sau pe bordul rezervorului. Functioneaza cu baterii."/>
             <column name="unit_price" valueNumeric="117"/>
-            <column name="image_url" value="assets/images/products/placeholder.png"/>
+            <column name="image_url" value="assets/images/products/animaledecompanie/a1.png"/>
             <column name="active" valueBoolean="true"/>
             <column name="units_in_stock" valueNumeric="30"/>
             <column name="date_created" valueDate="now()"/>
@@ -61,7 +61,7 @@
             <column name="description"
                     value="Tracker GPS impermeabil D79 conceput special pentru pisici, caini si alte animale de companie mici pentru a urmari!"/>
             <column name="unit_price" valueNumeric="310"/>
-            <column name="image_url" value="assets/images/products/placeholder.png"/>
+            <column name="image_url" value="assets/images/products/animaledecompanie/a2.png"/>
             <column name="active" valueBoolean="true"/>
             <column name="units_in_stock" valueNumeric="30"/>
             <column name="date_created" valueDate="now()"/>
@@ -73,7 +73,7 @@
             <column name="name" value="Ochelari de soare pentru animale "/>
             <column name="description" value="Poate exista o ușoară discrepanță de culoare din cauza luminii și ecranului."/>
             <column name="unit_price" valueNumeric="13"/>
-            <column name="image_url" value="assets/images/products/placeholder.png"/>
+            <column name="image_url" value="assets/images/products/animaledecompanie/a3.png"/>
             <column name="active" valueBoolean="true"/>
             <column name="units_in_stock" valueNumeric="100"/>
             <column name="date_created" valueDate="now()"/>
@@ -85,7 +85,7 @@
             <column name="name" value="Pelerina tip umbrela pentru frizerie sau coafor"/>
             <column name="description" value="Datorita fixarii reglabile este potrivita atat pentru copii cat si pentru adulti. "/>
             <column name="unit_price" valueNumeric="19"/>
-            <column name="image_url" value="assets/images/products/placeholder.png"/>
+            <column name="image_url" value="assets/images/products/altechestiifaine/acf1.png"/>
             <column name="active" valueBoolean="true"/>
             <column name="units_in_stock" valueNumeric="100"/>
             <column name="date_created" valueDate="now()"/>
@@ -97,11 +97,23 @@
             <column name="name" value="Incarcator alimentat cu energie solară"/>
             <column name="description" value=" Contine o baterie interna reincarcabila Li de 2500mAh. Iesire USB, intrare mini-USB. Include cablu mini-USB."/>
             <column name="unit_price" valueNumeric="78"/>
-            <column name="image_url" value="assets/images/products/placeholder.png"/>
+            <column name="image_url" value="assets/images/products/gadgeturi/g1.png"/>
             <column name="active" valueBoolean="true"/>
             <column name="units_in_stock" valueNumeric="130"/>
             <column name="date_created" valueDate="now()"/>
             <column name="category_id" valueNumeric="3"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="sku" value="S-1"/>
+            <column name="name" value="Roata pentru abdomene"/>
+            <column name="description" value="Este potrivita pentru orice persoana, indiferent de nivelul de pregatire sportiva al fiecaruia."/>
+            <column name="unit_price" valueNumeric="50"/>
+            <column name="image_url" value="assets/images/products/sport/s1.png"/>
+            <column name="active" valueBoolean="true"/>
+            <column name="units_in_stock" valueNumeric="30"/>
+            <column name="date_created" valueDate="now()"/>
+            <column name="category_id" valueNumeric="4"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
