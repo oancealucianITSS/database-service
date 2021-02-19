@@ -1,7 +1,9 @@
 package com.example.config;
 
+import com.example.entity.Country;
 import com.example.entity.Product;
 import com.example.entity.ProductCategory;
+import com.example.entity.State;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -20,7 +22,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     private EntityManager entityManager;
 
     @Autowired
-    public MyDataRestConfig(EntityManager theEntityManager){
+    public MyDataRestConfig(EntityManager theEntityManager) {
         entityManager = theEntityManager;
     }
 
@@ -28,20 +30,21 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
         HttpMethod[] theUnspportedActions = {HttpMethod.DELETE, HttpMethod.POST, HttpMethod.PUT};
 
-        //disable HTTP methods for Product : PUT, POST, DELETE
-        config.getExposureConfiguration()
-                .forDomainType(Product.class)
-                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnspportedActions))
-                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnspportedActions));
-
-        //disable HTTP methods for ProductCategory : PUT, POST, DELETE
-        config.getExposureConfiguration()
-                .forDomainType(ProductCategory.class)
-                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnspportedActions))
-                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnspportedActions));
+        //disable HTTP methods for Product, ProductCategory, Country, State : PUT, POST, DELETE
+        disableHttpMethods(Product.class, config, theUnspportedActions);
+        disableHttpMethods(ProductCategory.class, config, theUnspportedActions);
+        disableHttpMethods(Country.class, config, theUnspportedActions);
+        disableHttpMethods(State.class, config, theUnspportedActions);
 
         // call an internal helper method (we are expose ids)
         exposeIds(config);
+    }
+
+    private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnspportedActions) {
+        config.getExposureConfiguration()
+                .forDomainType(theClass)
+                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnspportedActions))
+                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnspportedActions));
     }
 
     private void exposeIds(RepositoryRestConfiguration config) {
@@ -54,7 +57,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         List<Class> entityClasses = new ArrayList<>();
 
         // get the entity types for the the entities
-        for(EntityType tempEntitytype : entities){
+        for (EntityType tempEntitytype : entities) {
             entityClasses.add(tempEntitytype.getJavaType());
         }
 
