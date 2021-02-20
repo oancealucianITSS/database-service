@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="202102191600#1" author="lucian.oancea">
+        <createTable tableName="country">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="user_primary_key"/>
+            </column>
+            <column name="code" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="name" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+        <rollback>
+            drop table country;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="202102191600#2" author="lucian.oancea">
+        <createTable tableName="state">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="user_primary_key"/>
+            </column>
+            <column name="name" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="country_id" type="integer">
+                <constraints foreignKeyName="fk_country" referencedColumnNames="id" referencedTableName="country" nullable="false"/>
+            </column>
+        </createTable>
+
+        <rollback>
+            drop table state;
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

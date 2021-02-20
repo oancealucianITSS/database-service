@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="202102201630#1" author="lucian.oancea">
+        <createTable tableName="address">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="adress_primary_key"/>
+            </column>
+            <column name="city" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="country" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="state" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="street" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="zip_code" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+        <rollback>
+            drop table address;
+        </rollback>
+    </changeSet>
+
+
+
+
+    <changeSet id="202102201630#2" author="lucian.oancea">
+        <createTable tableName="customer">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="customer_primary_key"/>
+            </column>
+            <column name="first_name" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="last_name" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="email" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+        <rollback>
+            drop table customer;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="202102201630#3" author="lucian.oancea">
+        <createTable tableName="orders">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="order_primary_key"/>
+            </column>
+            <column name="order_tracking_number" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="total_price" type="decimal(19,2)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="total_quantity" type="integer" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="status" type="varchar(128)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="date_created" type="DATETIME(6)" defaultValueComputed="null" >
+                <constraints nullable="true" />
+            </column>
+            <column name="last_updated" type="DATETIME(6)" defaultValueComputed="null" >
+                <constraints nullable="true" />
+            </column>
+            <column name="billing_address_id" type="integer">
+                <constraints foreignKeyName="FK_billing_address_id" referencedColumnNames="id" referencedTableName="address" nullable="false"/>
+            </column>
+            <column name="customer_id" type="integer">
+                <constraints foreignKeyName="FK_customer_id" referencedColumnNames="id" referencedTableName="customer" nullable="false"/>
+            </column>
+            <column name="shipping_address_id" type="integer">
+                <constraints foreignKeyName="FK_shipping_address_id" referencedColumnNames="id" referencedTableName="address" nullable="false"/>
+            </column>
+        </createTable>
+
+        <rollback>
+            drop table orders;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="202102201630#4" author="lucian.oancea">
+        <createIndex indexName="K_customer_id" tableName="orders">
+            <column name="customer_id"/>
+        </createIndex>
+        <rollback/>
+    </changeSet>
+
+    <changeSet id="202102201630#5" author="lucian.oancea">
+        <createTable tableName="order_item">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="order-item_primary_key"/>
+            </column>
+            <column name="image_url" type="varchar(255)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="quantity" type="integer" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="unit_price" type="decimal(19,2)" defaultValueComputed="null" >
+                <constraints nullable="true"/>
+            </column>
+            <column name="order_id" type="integer">
+                <constraints foreignKeyName="FK_order_id" referencedColumnNames="id" referencedTableName="orders" nullable="false"/>
+            </column>
+            <column name="product_id" type="integer">
+                <constraints foreignKeyName="FK_product_id" referencedColumnNames="id" referencedTableName="product" nullable="false"/>
+            </column>
+        </createTable>
+
+        <rollback>
+            drop table order_item;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="202102201630#6" author="lucian.oancea">
+        <createIndex indexName="K_order_id" tableName="order_item">
+            <column name="order_id"/>
+        </createIndex>
+        <rollback/>
+    </changeSet>
+
+
+</databaseChangeLog>

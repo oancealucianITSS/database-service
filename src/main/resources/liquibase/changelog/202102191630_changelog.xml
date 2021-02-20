@@ -1,0 +1,224 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="202102191630#1" author="lucian.oancea">
+        <insert tableName="state">
+            <column name="name" value="Alba"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Arad"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Argeș"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Bacău"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Bistrița-Năsăud"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Botoșani"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Brașov"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Brăila"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="București"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Buzău"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Caraș-Severin"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Călărași"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Cluj"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Constanța"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Covasna"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Dâmbovița"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Dolj"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Galați"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Giurgiu"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Gorj"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Harghita"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Hunedoara"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Ialomița"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Iași"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Ilfov"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Maramureș"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Mehedinți"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Mureș"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Neamț"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Olt"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Prahova"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Satu Mare"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Sălaj"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Sibiu"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Suceava"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Teleorman"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Timiș"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Tulcea"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Vaslui"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Vâlcea"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Vrancea"/>
+            <column name="country_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="202102191630#2" author="lucian.oancea">
+        <insert tableName="state">
+            <column name="name" value="Bălți"/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Cahul"/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Chișinău"/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Edineț"/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Găgăuzia"/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Lăpușna"/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Orhei"/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Stânga Nistrului"/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Taraclia"/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Tighina"/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Ungheni"/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="state">
+            <column name="name" value="Soroca "/>
+            <column name="country_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
