@@ -1,6 +1,7 @@
 package com.example.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -8,12 +9,13 @@ import java.util.Set;
 
 @Entity
 @Table(name="customer")
-@Data
+@Getter
+@Setter
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name="id")
     private Integer id;
 
     @Column(name="first_name")
@@ -28,10 +30,11 @@ public class Customer {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<Order> orders = new HashSet<>();
 
-    public void add(Order order){
-        if (order != null){
+    public void add(Order order) {
 
-            if(orders == null){
+        if (order != null) {
+
+            if (orders == null) {
                 orders = new HashSet<>();
             }
 
@@ -41,3 +44,12 @@ public class Customer {
     }
 
 }
+
+
+
+
+
+
+
+
+

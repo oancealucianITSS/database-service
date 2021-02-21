@@ -1,12 +1,14 @@
 package com.example.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Table
-@Entity(name="order_item")
-@Data
+@Entity
+@Table(name="order_item")
+@Getter
+@Setter
 public class OrderItem {
 
     @Id
@@ -24,12 +26,18 @@ public class OrderItem {
     private Integer quantity;
 
     @Column(name="product_id")
-    private Integer product_id;
+    private Integer productId;
 
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;
 
-
-
 }
+
+
+
+
+
+
+
+
