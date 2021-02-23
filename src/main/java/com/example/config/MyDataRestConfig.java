@@ -5,10 +5,12 @@ import com.example.entity.Product;
 import com.example.entity.ProductCategory;
 import com.example.entity.State;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import javax.persistence.EntityManager;
 import javax.persistence.metamodel.EntityType;
@@ -19,6 +21,9 @@ import java.util.Set;
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
+    @Value("${allowed.origins}")
+    private String[] theAllowedOrigins;
+
     private EntityManager entityManager;
 
     @Autowired
@@ -27,8 +32,8 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     }
 
     @Override
-    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-        HttpMethod[] theUnspportedActions = {HttpMethod.DELETE, HttpMethod.POST, HttpMethod.PUT};
+    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
+        HttpMethod[] theUnspportedActions = {HttpMethod.DELETE, HttpMethod.POST, HttpMethod.PUT,HttpMethod.PATCH};
 
         //disable HTTP methods for Product, ProductCategory, Country, State : PUT, POST, DELETE
         disableHttpMethods(Product.class, config, theUnspportedActions);
@@ -38,6 +43,9 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         // call an internal helper method (we are expose ids)
         exposeIds(config);
+
+        //configure cors mapping
+        cors.addMapping(config.getBasePath() + "/**").allowedOrigins(theAllowedOrigins);
     }
 
     private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnspportedActions) {

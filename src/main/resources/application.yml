@@ -6,6 +6,7 @@ spring:
     data:
         rest:
             base-path: /api
+            detection-strategy: ANNOTATED
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
         password: parola112
@@ -15,3 +16,8 @@ spring:
         properties:
             hibernate:
                 dialect: org.hibernate.dialect.MySQL8Dialect
+
+allowed:
+    origins: http://localhost:4200
+
+
